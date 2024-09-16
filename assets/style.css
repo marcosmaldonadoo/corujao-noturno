@@ -1,0 +1,460 @@
+
+
+/* Estilos Globais */
+body {
+    font-family: 'Poppins', sans-serif; /* Fonte principal para o corpo do texto */
+    color: #f0f0f0;
+    background-color: #1c1c1c;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para o overlay de carregamento */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loading-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading-overlay .loader {
+    border: 10px solid #1c1c1c; /* Cor da borda do loader */
+    border-top: 10px solid #00bfff; /* Cor da animação de carregamento */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+/* Animação de rotação do loader */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* Navbar */
+.navbar {
+    background: black;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif; /* Fonte para a logo */
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    font-size: 1.1em;
+    padding: 5px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.navbar .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #00bfff;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    color: #00bfff;
+    transform: scale(1.1);
+}
+
+.navbar .nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+/* hero section */
+
+.hero {
+    position: relative;
+    background-image: url("./img/image.png"); /* Substitua pelo caminho da sua imagem */
+    background-size: cover; /* Faz com que a imagem cubra toda a área da seção */
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    overflow: hidden; /* Garante que o conteúdo não vaze da seção */
+}
+
+/* Efeito de escurecimento */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Cor preta com opacidade de 50% para escurecer a imagem */
+    z-index: 1; /* Garante que o efeito de escurecimento esteja atrás do texto */
+}
+
+/* Estilo do texto dentro da seção hero */
+.hero h1,
+.hero p {
+    position: relative; /* Garante que o texto esteja acima do efeito de escurecimento */
+    z-index: 2; /* Garante que o texto esteja acima do efeito de escurecimento */
+}
+
+.hero h1 {
+    text-transform: uppercase;
+    font-size: 3em;
+    margin: 0;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    font-weight: 400;
+}
+
+/* Info Section */
+.info-section {
+    background-color: #333;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.info-section h2 {
+    margin-bottom: 20px;
+    color: #00bfff;
+    font-weight: 600;
+}
+
+.info-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.info-item {
+    background: #444;
+    border: 1px solid #555;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+}
+
+.info-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.info-item .info-content {
+    padding: 20px;
+}
+
+.info-item .info-content h3 {
+    margin-top: 0;
+    color: #00bfff;
+    font-weight: 600;
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Form Section */
+.form-section {
+    background-color: #222;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.form-section h2 {
+    margin-bottom: 20px;
+    color: #00bfff;
+    font-weight: 600;
+}
+
+.form-section form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-section input, .form-section select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+.form-section input::placeholder, .form-section select {
+    color: #888;
+}
+
+.form-section button {
+    background-color: #00bfff;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.form-section button:hover {
+    background-color: #0099ff;
+}
+
+/* Footer */
+.footer {
+    background-color: #222;
+    color: #aaa;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer a {
+    color: #00bfff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Cookie Banner Styles */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #1c1c1c;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    display: none; /* Oculto por padrão */
+    z-index: 1000;
+    border: 2px solid #00bfff; /* Borda básica */
+    border-radius: 5px; /* Arredondar bordas */
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.7), /* Luz de LED azul */
+                0 0 20px rgba(0, 191, 255, 0.4); /* Luz de LED azul mais suave */
+}
+
+.cookie-banner p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.cookie-banner a {
+    color: #00bfff;
+    text-decoration: none;
+}
+
+.cookie-banner a:hover {
+    text-decoration: underline;
+}
+
+.cookie-banner button {
+    background-color: #00bfff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 5px rgba(0, 191, 255, 0.6); /* Efeito de luz no botão */
+}
+
+.cookie-banner button:hover {
+    background-color: #0099ff;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.8); /* Intensificar o efeito de luz no botão ao passar o mouse */
+}
+
+/* Estilos da Política de Privacidade */
+.privacy-policy {
+    background-color: #1c1c1c;
+    color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+}
+
+.privacy-policy h1, .privacy-policy h2, .privacy-policy h3 {
+    color: #00bfff;
+}
+
+.privacy-policy p {
+    margin-bottom: 10px;
+}
+
+.privacy-policy ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.privacy-policy li {
+    margin-bottom: 5px;
+}
+
+/* Estilos Responsivos */
+
+/* Para dispositivos móveis (máximo 768px) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .navbar .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar .logo a {
+        font-size: 1.2em;
+    }
+
+    .hero {
+        padding: 50px 10px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .info-grid {
+        flex-direction: column;
+    }
+
+    .info-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .form-section form {
+        padding: 0 10px;
+    }
+}
+
+/* Para tablets (mínimo 769px e máximo 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .navbar {
+        padding: 15px 30px;
+    }
+    
+    .navbar .nav-links {
+        gap: 15px;
+    }
+
+    .navbar .logo a {
+        font-size: 1.4em;
+    }
+
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    .info-grid {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .info-item {
+        width: 45%;
+    }
+
+    .form-section form {
+        padding: 0 20px;
+    }
+}
+
+/* Para telas grandes (1025px e acima) */
+@media (min-width: 1025px) {
+    .navbar {
+        padding: 15px 50px;
+    }
+
+    .navbar .nav-links {
+        gap: 20px;
+    }
+
+    .hero {
+        padding: 100px 20px;
+    }
+
+    .hero h1 {
+        font-size: 3em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    .info-grid {
+        gap: 20px;
+    }
+
+    .info-item {
+        width: 300px;
+    }
+
+    .form-section form {
+        padding: 0;
+    }
+}

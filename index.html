@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corujão Noturno</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay">
+      <div class="loader"></div>
+    </div>
+
+    <div class="navbar">
+      <div class="logo">
+        <a href="#">Corujão Noturno</a>
+      </div>
+      <div class="nav-links">
+        <a href="#home">Início</a>
+        <a href="#about">Sobre</a>
+        <a href="#signup">Inscrição</a>
+      </div>
+    </div>
+
+    <section id="home" class="hero">
+      <h1>Participe de campeonatos de Warzone!</h1>
+      <p>Mostre suas habilidades, divirta-se e ganhe prêmios.</p>
+    </section>
+
+    <section id="about" class="info-section">
+      <h2>Sobre os Campeonatos</h2>
+      <div class="info-grid">
+        <div class="info-item">
+          <img src="assets/img/img1.png" alt="Informação 1" />
+          <div class="info-content">
+            <h3>Data e Hora</h3>
+            <p>
+              A data do campeonato será diviulgada assim que tivermos 40
+              inscrições confirmadas!
+            </p>
+          </div>
+        </div>
+        <div class="info-item">
+          <img src="assets/img/img2.png" alt="Informação 2" />
+          <div class="info-content">
+            <h3>Regras</h3>
+            <p>
+              As regras são repassadas no briefing que ocorrerá 1 dia antes do
+              campeonato.
+            </p>
+          </div>
+        </div>
+        <div class="info-item">
+          <img src="assets/img/img3.png" alt="Informação 3" />
+          <div class="info-content">
+            <h3>Premiações</h3>
+            <p>Valores em Pix ou COD Points</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="signup" class="form-section">
+      <h2>Inscreva-se Agora</h2>
+      <form onsubmit="handleFormSubmit(event)">
+        <label for="name">Nick:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="platform">Plataforma:</label>
+        <select id="platform" name="platform" required>
+          <option value="" disabled selected>Selecione sua plataforma</option>
+          <option value="ps5">PlayStation</option>
+          <option value="xbox">Xbox</option>
+          <option value="pc">PC</option>
+        </select>
+
+        <button type="submit">Enviar Inscrição</button>
+      </form>
+    </section>
+
+    <div class="footer">
+      <p>&copy; Corujão Noturno 2024. Todos os direitos reservados.</p>
+      <p>
+        <a href="https://chat.whatsapp.com/KPvih5ommZd1AbuEJ9lkSb">Contato</a> |
+        <a href="/privacyPolicy.html">Política de Privacidade</a>
+      </p>
+    </div>
+
+    <script src="assets/main.js"></script>
+    <script>
+      // JavaScript para ocultar o overlay de carregamento após o carregamento da página
+      window.addEventListener("load", function () {
+        const overlay = document.querySelector(".loading-overlay");
+        if (overlay) {
+          overlay.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
