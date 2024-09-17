@@ -10,7 +10,7 @@ function sendWhatsAppMessage() {
         `Plataforma: ${platform}\n`
     );
 
-    var phoneNumber = '3391280758'; // Substitua pelo número de telefone do WhatsApp
+    var phoneNumber = '43991054948'; // Substitua pelo número de telefone do WhatsApp
     var url = `https://wa.me/${phoneNumber}?text=${message}`;
 
     window.open(url, '_blank');
