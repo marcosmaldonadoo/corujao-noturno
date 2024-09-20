@@ -52,7 +52,7 @@ body {
     color: #fff;
     padding: 10px 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     position: sticky;
     top: 0;
@@ -70,7 +70,7 @@ body {
 
 .navbar .nav-links {
     display: flex;
-    gap: 20px;
+    gap: 100px;
 }
 
 .navbar .nav-links a {
@@ -121,11 +121,13 @@ body {
 /* Estilos responsivos */
 @media (max-width: 768px) {
     .navbar .nav-links {
+        padding-left: 5%;
+        width: 100%;
         display: none; /* Esconde os links */
         flex-direction: column; /* Coloca os links em coluna */
         position: absolute;
         background-color: black;
-        top: 60px; /* Abaixo da navbar */
+        top: 70px; /* Abaixo da navbar */
         left: 0;
         right: 0;
         z-index: 999;
