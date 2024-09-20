@@ -10,7 +10,7 @@ function sendWhatsAppMessage() {
         `Plataforma: ${platform}\n`
     );
 
-    var phoneNumber = '43991054948'; // Substitua pelo número de telefone do WhatsApp
+    var phoneNumber = '3391280758'; // Substitua pelo número de telefone do WhatsApp
     var url = `https://wa.me/${phoneNumber}?text=${message}`;
 
     window.open(url, '_blank');
@@ -40,4 +40,13 @@ document.addEventListener('DOMContentLoaded', function() {
         // Oculta o banner
         cookieBanner.style.display = 'none';
     });
+});
+
+//Menu Hamburguer 
+
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+
+mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active'); // Alterna a classe 'active'
 });
